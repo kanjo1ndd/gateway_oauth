@@ -96,3 +96,14 @@ If you want to test the gateway locally through Kubernetes, you can forward the 
 
 ```bash
 kubectl port-forward service/gateway-service 8080:80
+
+
+### Add your secrets
+apiVersion: v1
+kind: Secret
+metadata:
+  name: google-oauth
+type: Opaque
+stringData:
+  client-id: ""
+  client-secret: ""
