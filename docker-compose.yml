@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+
+  gateway:
+    build: ./gateway
+    ports:
+      - "8080:8080"
+
+  java-backend:
+    build: ./java-backend
+    ports:
+      - "8081:8081"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - gateway
